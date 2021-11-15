@@ -22,10 +22,7 @@ public class BookDAO implements IBookDAO {
     public Book findById(int id) {
         Book res = null;
         for (Book data : books) {
-            if(data.getId() == id){
-                res = data;
-                break;
-            }
+            if(data.getId() == id) res = data;
         }
         return res;
     }
@@ -38,13 +35,16 @@ public class BookDAO implements IBookDAO {
 
     @Override
     public void delete(int id) {
-        Book d = null;
-        for (Book data : books) {
-            if(data.getId() == id){
-                d = data;
-                break;
-            }
+        List<Book> booksCopy = List.copyOf(books);
+        for(Book b : booksCopy) {
+            if (b.getId() == id) books.remove(b);
         }
-        books.remove(d);
+    }
+
+    @Override
+    public void update(int id, Book book) {
+        for(Book b : books) {
+            if(b.getId() == id) b.update(book);
+        }
     }
 }

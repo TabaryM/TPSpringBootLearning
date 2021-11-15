@@ -60,4 +60,12 @@ public class Book{
     public void setPrice(float price) {
         this.price = price;
     }
+
+    public void update(Book book) {
+        this.title = book.title;
+        this.author = book.author;
+        this.description = book.description;
+        this.shop = book.shop;
+        this.price = book.price;
+    }
 }

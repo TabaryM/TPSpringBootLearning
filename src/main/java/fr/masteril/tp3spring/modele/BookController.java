@@ -35,6 +35,11 @@ public class BookController{
         dao.delete(id);
     }
 
+    @PutMapping(value = "Books/{id}")
+    public void updateData(@PathVariable int id, @RequestBody Book book) {
+        dao.update(id, book);
+    }
+
     private void initData() {
         dao.save(new Book(
                 "The Hobbit; or, There and Back Again",

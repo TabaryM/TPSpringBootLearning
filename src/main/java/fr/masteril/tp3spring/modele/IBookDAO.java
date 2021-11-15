@@ -7,4 +7,5 @@ public interface IBookDAO {
     Book findById(int id);
     void save(Book data);
     void delete(int id);
+    void update(int id, Book book);
 }
