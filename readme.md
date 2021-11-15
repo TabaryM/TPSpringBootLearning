@@ -27,19 +27,16 @@ La création d'objet se fait via une requête POST.
 L'objet que l'on ajoute est renseigné dans le corps de la requête.
 
 Tous les champs sont remplis par l'utilisateur, il faudrait modifier ceci pour que les ids soient uniques et gérés par l'application.
-![screenshot postman POST](img/POST.png)
-<img alt="screenshot postman POST" src="img/POST.png" height="50%" width="50%"/>
+<img alt="screenshot postman POST" src="img/POST.png" height="75%" width="75%"/>
 
 ### Read
 La lecture des objets se fait via GET.
 
 L'endpoint http://localhost:8080/Books/ liste toutes les données de l'API.
-![screenshot postman GET all](img/GETALL.png)
-<img alt="screenshot postman GET all" src="img/GETALL.png" height="50%" width="50%"/>
+<img alt="screenshot postman GET all" src="img/GETALL.png" height="75%" width="75%"/>
 
 L'endpoint http://localhost:8080/Books/{id} affiche le livre avec l'id demandé.
-![screenshot postman GET one](img/GET.png)
-<img alt="screenshot postman GET one" src="img/GET.png" height="50%" width="50%"/>
+<img alt="screenshot postman GET one" src="img/GET.png" height="75%" width="75%"/>
 
 ### Update
 Les modifications se font via PUT.
@@ -47,12 +44,10 @@ Les modifications se font via PUT.
 L'endpoint utilisé est http://localhost:8080/Books/{id}
 
 L'objet passé en paramètres (corps de la requête) doit être complet.
-![screenshot postman update one](img/PUT.png)
-<img alt="screenshot postman update one" src="img/PUT.png" height="50%" width="50%"/>
+<img alt="screenshot postman update one" src="img/PUT.png" height="75%" width="75%"/>
 
 
 ## Problèmes rencontrés
-- Quels objets traiter ?
 - Comment gérer les erreurs ?
-- Gestion des objets avec des id identiques
-- Création d'objet héritant d'une interface
+- Gestion des objets avec des id identiques / Comment forcer l'unicité des ids ?
+- Création d'objet héritant d'une interface / Le parser par défaut n'arrive pas à créer des objets issus d'une interface.
