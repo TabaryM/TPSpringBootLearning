@@ -2,8 +2,11 @@
 Par Mathieu Tabary - novembre 2021 - Master 2 Ingénierie Logiciels
 
 Version de Java : 11
+
 Adresse de l'API : localhost/
+
 Port de l'API : 8080
+
 url d'accès : http://localhost:8080/Books
 
 ## Données traitées
@@ -23,28 +26,27 @@ Les données de bases sont 4 livres de J.R.R. Tolkien ou des livres qui parlent 
 ## CRUD
 ### Create
 La création d'objet se fait via une requête POST.
-
 L'objet que l'on ajoute est renseigné dans le corps de la requête.
-
 Tous les champs sont remplis par l'utilisateur, il faudrait modifier ceci pour que les ids soient uniques et gérés par l'application.
-<img alt="screenshot postman POST" src="img/POST.png" height="75%" width="75%"/>
+
+<img alt="screenshot postman POST" src="https://github.com/TabaryM/TPSpringBootLearning/raw/master/img/POST.png" height="75%" width="75%"/>
 
 ### Read
 La lecture des objets se fait via GET.
-
 L'endpoint http://localhost:8080/Books/ liste toutes les données de l'API.
-<img alt="screenshot postman GET all" src="img/GETALL.png" height="75%" width="75%"/>
+
+<img alt="screenshot postman GET all" src="https://github.com/TabaryM/TPSpringBootLearning/raw/master/img/GETALL.png" height="75%" width="75%"/>
 
 L'endpoint http://localhost:8080/Books/{id} affiche le livre avec l'id demandé.
-<img alt="screenshot postman GET one" src="img/GET.png" height="75%" width="75%"/>
+
+<img alt="screenshot postman GET one" src="https://github.com/TabaryM/TPSpringBootLearning/raw/master/img/GET.png" height="75%" width="75%"/>
 
 ### Update
-Les modifications se font via PUT.
-
-L'endpoint utilisé est http://localhost:8080/Books/{id}
-
+Les modifications se font via PUT. 
+L'endpoint utilisé est http://localhost:8080/Books/{id}. 
 L'objet passé en paramètres (corps de la requête) doit être complet.
-<img alt="screenshot postman update one" src="img/PUT.png" height="75%" width="75%"/>
+
+<img alt="screenshot postman update one" src="https://github.com/TabaryM/TPSpringBootLearning/raw/master/img/PUT.png" height="75%" width="75%"/>
 
 
 ## Problèmes rencontrés
