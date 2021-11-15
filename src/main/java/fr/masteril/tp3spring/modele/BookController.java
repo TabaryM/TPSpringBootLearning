@@ -6,34 +6,30 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class BookController implements DataController{
-    private final IDataDAO dao;
+public class BookController{
+    private final IBookDAO dao;
 
     @Autowired
-    public BookController(IDataDAO dao) {
+    public BookController(IBookDAO dao) {
         this.dao = dao;
         initData();
     }
 
-    @Override
     @GetMapping(value = "/Books")
-    public List<Data> getDatas(){
+    public List<Book> getDatas(){
         return dao.findAll();
     }
 
-    @Override
     @GetMapping(value = "/Books/{id}")
-    public Data getData(@PathVariable int id){
+    public Book getData(@PathVariable int id){
         return dao.findById(id);
     }
 
-    @Override
     @PostMapping(value = "Books")
-    public void addData(@RequestBody Data data){
+    public void addData(@RequestBody Book data){
         dao.save(data);
     }
 
-    @Override
     @DeleteMapping(value = "Books/{id}")
     public void deleteData(@PathVariable int id) {
         dao.delete(id);

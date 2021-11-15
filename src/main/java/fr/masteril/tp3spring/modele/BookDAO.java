@@ -1,28 +1,27 @@
 package fr.masteril.tp3spring.modele;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class BookDAO implements IDataDAO{
-    private final List<Data> books;
+public class BookDAO implements IBookDAO {
+    private final List<Book> books;
 
     public BookDAO() {
         books = new ArrayList<>();
     }
 
     @Override
-    public List<Data> findAll() {
+    public List<Book> findAll() {
         return List.copyOf(books);
     }
 
     @Override
-    public Data findById(int id) {
-        Data res = null;
-        for (Data data : books) {
+    public Book findById(int id) {
+        Book res = null;
+        for (Book data : books) {
             if(data.getId() == id){
                 res = data;
                 break;
@@ -32,15 +31,15 @@ public class BookDAO implements IDataDAO{
     }
 
     @Override
-    public void save(Data data) {
+    public void save(Book data) {
         assert (data.getClass() == Book.class): "Error : Data type incorrect, please only add Books";
         books.add(data);
     }
 
     @Override
     public void delete(int id) {
-        Data d = null;
-        for (Data data : books) {
+        Book d = null;
+        for (Book data : books) {
             if(data.getId() == id){
                 d = data;
                 break;

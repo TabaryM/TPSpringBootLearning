@@ -1,6 +1,6 @@
 package fr.masteril.tp3spring.modele;
 
-public class Book implements Data{
+public class Book{
     private final int id;
     private String title;
     private String author;
@@ -17,26 +17,6 @@ public class Book implements Data{
         this.price = price;
     }
 
-    public Book(Data data) {
-        assert (data.getClass() == Book.class): "Error : Wrong Data type, please put only Book";
-        this.id = IdGenerator.generateId();
-        this.title = ((Book) data).getTitle();
-        this.author = ((Book) data).getAuthor();
-        this.description = ((Book) data).getDescription();
-        this.shop = ((Book) data).getShop();
-        this.price = ((Book) data).getPrice();
-    }
-
-    public Book(){
-        this.id = IdGenerator.generateId();
-        this.title = "";
-        this.author = "";
-        this.description = "";
-        this.shop = "";
-        this.price = 0f;
-    }
-
-    @Override
     public int getId() {
         return id;
     }
